@@ -5,26 +5,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>login</title>
-    <link href="./style.css" type="text/css" rel="stylesheet">
+    <link href="./css/style.css" type="text/css" rel="stylesheet">
 </head>
 <!--<body oncontextmenu="return false" ondragstart="return false" onselectstart="return false"> -->
 <body>
 
-    
+    <h2 class="clock">
+        00:00
+    </h2>
     <form class="hidden login-form">
         <input required maxlength="15" type="text" placeholder = "what is your name" id="username"/>
         <input type="submit" value="Login">
     </form>
     <h1 class="hidden greeting">
-
+    
     </h1>
+    <div class = "quote">
+        <span></span>
+
+        <span></span>
+    </div>
     <div class="ToNaver">
         <a href="https://www.naver.com">Go to naver</a>
     </div>
     <div class="SimpleNotice">
         <p>simpleNotice_Test(prevent copy)</p>
     </div>
-    <script src="app.js"></script>
+    
+    <script src="js/greeting.js"></script>
+    <script src="js/clock.js"></script>
+    <script src="js/quotes.js"></script>
     
 </body>
 </html>

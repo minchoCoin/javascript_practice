@@ -10,3 +10,6 @@
 .ToNaver a:active{
     color:red;
 }
+.hidden{
+    display:none;
+}

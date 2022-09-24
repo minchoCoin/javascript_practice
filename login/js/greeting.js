@@ -3,6 +3,9 @@ const loginInput = document.querySelector(".login-form #username")
 const NaverLink = document.querySelector(".ToNaver a");
 const SimpleNotice = document.querySelector(".SimpleNotice p");
 const greeting = document.querySelector(".greeting")
+const resetNamediv = document.querySelector(".resetName")
+const resetNamebutton = resetNamediv.querySelector("button");
+
 
 const USERNAME_KEY = "username";
 const HIDDEN_CLASS = "hidden";
@@ -31,18 +34,30 @@ function onCopyNotice(event){
 function writeGreeting(name){
     greeting.classList.remove(HIDDEN_CLASS);
     greeting.innerText = `Hello ${name}`;
+    resetNamediv.classList.remove(HIDDEN_CLASS);
+}
+
+function onResetName(){
+    localStorage.removeItem(USERNAME_KEY);
+    loginForm.classList.remove(HIDDEN_CLASS);
+    greeting.classList.add(HIDDEN_CLASS);
+    resetNamediv.classList.add(HIDDEN_CLASS);
+    loginInput.value = "";
 }
 
 NaverLink.addEventListener("click", onNaverClick);
 SimpleNotice.addEventListener("copy",onCopyNotice);
+resetNamebutton.addEventListener("click",onResetName)
+loginForm.addEventListener("submit",onLoginSubmit);
 
 const SavedUsername = localStorage.getItem(USERNAME_KEY);
 
 if(SavedUsername === null){
    loginForm.classList.remove(HIDDEN_CLASS);
-   loginForm.addEventListener("submit",onLoginSubmit);
+   
 }
 else{
     writeGreeting(SavedUsername);
+    resetNamediv.classList.remove(HIDDEN_CLASS);
     
 }

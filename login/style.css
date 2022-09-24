@@ -1,0 +1,12 @@
+.ToNaver a:link{
+    color:black;
+}
+.ToNaver a:visited{
+    color:green;
+}
+.ToNaver a:hover{
+    color:blue;
+}
+.ToNaver a:active{
+    color:red;
+}
